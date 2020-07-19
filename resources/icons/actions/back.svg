@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <g>
+        <rect x="2" y="7" width="12" height="2" style="fill:#389fd6;"/>
+        <g>
+            <path d="M5.949,3.049l-4.949,4.949l1.273,1.273l4.949,-4.949l-1.273,-1.273Z" style="fill:#389fd6;"/>
+            <path d="M2.273,6.726l-1.273,1.273l4.949,4.949l1.273,-1.273l-4.949,-4.949Z" style="fill:#389fd6;"/>
+        </g>
+    </g>
+</svg>
