@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.chylex.intellij.coloredicons</id>
   <name>Colored Icons</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <vendor email="contact@chylex.com" url="https://chylex.com">chylex</vendor>
 
   <description>
