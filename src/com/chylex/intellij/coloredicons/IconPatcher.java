@@ -69,13 +69,34 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("hierarchy/subtypes");
 		addPathWithDark("hierarchy/supertypes");
 		
+		addPathWithDark("icons/ejbToolWindow");
+		addPathWithDark("icons/javaeeToolWindow");
+		addPathWithDark("icons/jpaConsoleToolWindow");
+		addPathWithDark("icons/jpaToolWindow");
+		addPathWithDark("icons/OpenTerminal_13x13");
+		addPathWithDark("icons/springToolWindow");
+		addPathWithDark("icons/toolWindowConsole");
 		addPathWithDark("icons/toolWindowDatabase");
+		addPathWithDark("icons/toolwindowDatabaseChanges");
+		addPathWithDark("icons/toolWindowGradle");
+		addPathWithDark("icons/toolWindowSQLGenerator");
+		addPathWithDark("icons/buildTools/gulp_toolwindow");
+		addPathWithDark("icons/buildTools/grunt/grunt_toolwindow");
+		addPathWithDark("icons/buildTools/npm/npm_13");
+		
+		addPathWithDark("images/toolWindowMaven");
+		addPathWithDark("images/transferToolWindow");
+		addPathWithDark("images/webServerToolWindow");
 		
 		addPathWithDark("modules/addExcludedRoot");
 		
 		addPathWithDark("objectBrowser/sortByType");
 		addPathWithDark("objectBrowser/sorted");
 		addPathWithDark("objectBrowser/sortedByUsage");
+		
+		addPathWithDark("org/jetbrains/plugins/github/pullRequestsToolWindow");
+		
+		addPathWithDark("resources/icons/bvToolWindow");
 		
 		addPathWithDark("runConfigurations/sortbyDuration");
 		
@@ -92,6 +113,7 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("toolbarDecorator/import");
 		
 		addPathWithDark("toolwindows/documentation");
+		addPathWithDark("toolwindows/toolWindowAnt");
 		addPathWithDark("toolwindows/toolWindowBuild");
 		addPathWithDark("toolwindows/toolWindowChanges");
 		addPathWithDark("toolwindows/toolWindowCommit");
