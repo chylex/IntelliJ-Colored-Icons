@@ -114,20 +114,20 @@ public class IconPatcher extends IconPathPatcher{
 		IconLoader.installPathPatcher(this);
 	}
 	
-	private void addPathWithDark(String path){
-		iconPaths.put("/" + path + ".svg", "/icons/" + path + ".svg");
-		iconPaths.put("/" + path + "_dark.svg", "/icons/" + path + "_dark.svg");
+	private void addPathWithDark(final String path){
+		iconPaths.put('/' + path + ".svg", "/icons/" + path + ".svg");
+		iconPaths.put('/' + path + "_dark.svg", "/icons/" + path + "_dark.svg");
 	}
 	
 	@Nullable
 	@Override
-	public String patchPath(@NotNull String path, ClassLoader classLoader){
+	public String patchPath(@NotNull final String path, final ClassLoader classLoaderIgnore){
 		return iconPaths.get(path);
 	}
 	
 	@Nullable
 	@Override
-	public ClassLoader getContextClassLoader(@NotNull String path, ClassLoader originalClassLoader){
+	public ClassLoader getContextClassLoader(@NotNull final String path, final ClassLoader originalClassLoader){
 		return classLoader;
 	}
 }
