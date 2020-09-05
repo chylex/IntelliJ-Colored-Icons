@@ -1,13 +1,31 @@
 <idea-plugin>
   <id>com.chylex.intellij.coloredicons</id>
   <name>Colored Icons</name>
-  <version>1.1</version>
+  <version>1.2</version>
   <vendor email="contact@chylex.com" url="https://chylex.com">chylex</vendor>
 
   <description>
 	  Adds color to many of the gray IntelliJ platform icons.
 	  Uses resources from https://github.com/JetBrains/intellij-community and some of the official IntelliJ platform plugins.
   </description>
+  
+  <change-notes><![CDATA[
+    <b>Version 1.2</b>
+    <ul>
+      <li>Added tool window icons for IDEs - CLion, PyCharm, and Rider</li>
+      <li>Tweaked a few tool window icons</li>
+    </ul>
+    <b>Version 1.1</b>
+    <ul>
+      <li>Added tool window icons for Terminal, Pull Requests, Gradle, Ant, Maven</li>
+      <li>Added missing tool window icons from plugins - Java EE, Database Tools, JavaScript</li>
+      <li>Tweaked Build tool window icon</li>
+    </ul>
+    <b>Version 1.0</b>
+    <ul>
+      <li>First release with 176 updated icons</li>
+    </ul>
+  ]]></change-notes>
 
   <idea-version since-build="183.0"/>
   <depends>com.intellij.modules.platform</depends>
