@@ -104,6 +104,12 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("resources/icons/bvToolWindow");
 		addPathWithDark("resources/icons/hibConsoleToolWindow");
 		
+		addPathWithDark("rider/toolWindows/toolWindowNuGet");
+		addPathWithDark("rider/toolWindows/toolWindowSolutionWideAnalysis");
+		addPathWithDark("rider/toolWindows/toolwindowStacktrace");
+		addPathWithDark("rider/toolWindows/toolWindowUnitTesting");
+		addPathWithDark("rider/toolWindows/toolWindowWPFPreview");
+		
 		addPathWithDark("runConfigurations/sortbyDuration");
 		
 		addPathWithDark("toolbarDecorator/addBlankLine");
@@ -138,6 +144,10 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("toolwindows/toolWindowStructure");
 		addPathWithDark("toolwindows/toolWindowTodo");
 		addPathWithDark("toolwindows/webToolWindow");
+		
+		addPathWithDark("toolWindowDotTrace");
+		addPathWithDark("toolWindowDPA");
+		addPathWithDark("toolwindowUnitTestCoverage");
 		
 		IconLoader.installPathPatcher(this);
 	}

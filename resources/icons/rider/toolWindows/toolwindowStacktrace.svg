@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
+    <g>
+        <g opacity="0">
+            <rect x="0" y="0" width="13" height="13" style="fill:#eda200;"/>
+        </g>
+        <path d="M12,5l0,6l-7,0l0,-1l6,0l0,-5l1,0Zm-3,-2l0,5l-6,0l0,1l7,0l0,-6l-1,0Zm-1,-2l0,6l-7,0l0,-6l7,0Zm-1,1l-5,0l0,4l5,0l0,-4Z" style="fill:#eda200;fill-rule:nonzero;"/>
+    </g>
+</svg>
