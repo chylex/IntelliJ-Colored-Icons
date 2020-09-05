@@ -69,10 +69,13 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("hierarchy/subtypes");
 		addPathWithDark("hierarchy/supertypes");
 		
+		addPathWithDark("icons/CMakeToolWindow");
+		addPathWithDark("icons/ConcurrencyDiagramToolwindow");
 		addPathWithDark("icons/ejbToolWindow");
 		addPathWithDark("icons/javaeeToolWindow");
 		addPathWithDark("icons/jpaConsoleToolWindow");
 		addPathWithDark("icons/jpaToolWindow");
+		addPathWithDark("icons/makefileToolWindow");
 		addPathWithDark("icons/OpenTerminal_13x13");
 		addPathWithDark("icons/springToolWindow");
 		addPathWithDark("icons/toolWindowConsole");
@@ -83,6 +86,8 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("icons/buildTools/gulp_toolwindow");
 		addPathWithDark("icons/buildTools/grunt/grunt_toolwindow");
 		addPathWithDark("icons/buildTools/npm/npm_13");
+		addPathWithDark("icons/com/jetbrains/python/DataView");
+		addPathWithDark("icons/com/jetbrains/python/pythonConsoleToolWindow");
 		
 		addPathWithDark("images/toolWindowMaven");
 		addPathWithDark("images/transferToolWindow");
@@ -97,6 +102,7 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("org/jetbrains/plugins/github/pullRequestsToolWindow");
 		
 		addPathWithDark("resources/icons/bvToolWindow");
+		addPathWithDark("resources/icons/hibConsoleToolWindow");
 		
 		addPathWithDark("runConfigurations/sortbyDuration");
 		
