@@ -1,6 +1,8 @@
 /.idea/$CACHE_FILE$
+/.idea/codeStyles/
+/.idea/dictionaries/
 /.idea/inspectionProfiles/
-/.idea/dictionaries
+/.idea/uiDesigner.xml
 /dev/
 /out/
 *.jar
