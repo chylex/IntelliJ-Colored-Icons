@@ -27,6 +27,7 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("actions/menu-saveall");
 		addPathWithDark("actions/newFolder");
 		addPathWithDark("actions/nextOccurence");
+		addPathWithDark("actions/openNewTab");
 		addPathWithDark("actions/prettyPrint");
 		addPathWithDark("actions/previousOccurence");
 		addPathWithDark("actions/realIntentionBulb");
@@ -34,11 +35,15 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("actions/refresh");
 		addPathWithDark("actions/RemoveMulticaret");
 		addPathWithDark("actions/rollback");
+		addPathWithDark("actions/show");
+		addPathWithDark("actions/showCode");
+		addPathWithDark("actions/showHiddens");
 		addPathWithDark("actions/splitHorizontally");
 		addPathWithDark("actions/splitVertically");
 		addPathWithDark("actions/swapPanels");
 		addPathWithDark("actions/synchronizeScrolling");
 		addPathWithDark("actions/syncPanels");
+		addPathWithDark("actions/toggleSoftWrap");
 		addPathWithDark("actions/unselectall");
 		addPathWithDark("actions/upload");
 		
@@ -69,9 +74,11 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("hierarchy/subtypes");
 		addPathWithDark("hierarchy/supertypes");
 		
+		addPathWithDark("icons/cherryPick");
 		addPathWithDark("icons/CMakeToolWindow");
 		addPathWithDark("icons/ConcurrencyDiagramToolwindow");
 		addPathWithDark("icons/ejbToolWindow");
+		addPathWithDark("icons/IntelliSort");
 		addPathWithDark("icons/javaeeToolWindow");
 		addPathWithDark("icons/jpaConsoleToolWindow");
 		addPathWithDark("icons/jpaToolWindow");
@@ -110,6 +117,9 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("rider/toolWindows/toolWindowUnitTesting");
 		addPathWithDark("rider/toolWindows/toolWindowWPFPreview");
 		
+		addPathWithDark("runConfigurations/scroll_down");
+		addPathWithDark("runConfigurations/showIgnored");
+		addPathWithDark("runConfigurations/showPassed");
 		addPathWithDark("runConfigurations/sortbyDuration");
 		
 		addPathWithDark("toolbarDecorator/addBlankLine");
@@ -144,6 +154,9 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("toolwindows/toolWindowStructure");
 		addPathWithDark("toolwindows/toolWindowTodo");
 		addPathWithDark("toolwindows/webToolWindow");
+		
+		addPathWithDark("vcs/history");
+		addPathWithDark("vcs/merge");
 		
 		addPathWithDark("toolWindowDotTrace");
 		addPathWithDark("toolWindowDPA");

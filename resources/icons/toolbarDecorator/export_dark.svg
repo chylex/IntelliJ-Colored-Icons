@@ -3,8 +3,8 @@
         <rect x="2" y="4" width="2" height="10" style="fill:#afb1b3;"/>
         <rect x="2" y="12" width="10" height="2" style="fill:#afb1b3;"/>
         <g>
-            <path d="M5.796,8.796l1.414,1.414l5.93,-5.93l-1.414,-1.414l-5.93,5.93Z" style="fill:#3592c4;"/>
-            <path d="M14,8l-6,-6l6,0l0,6Z" style="fill:#3592c4;"/>
+            <path d="M5.796,8.796l1.414,1.414l5.93,-5.93l-1.414,-1.414l-5.93,5.93Z" style="fill:#a664ae;fill-rule:nonzero;"/>
+            <path d="M14,8l-6,-6l6,0l0,6Z" style="fill:#a664ae;fill-rule:nonzero;"/>
         </g>
     </g>
 </svg>
