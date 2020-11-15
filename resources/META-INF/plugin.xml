@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.chylex.intellij.coloredicons</id>
   <name>Colored Icons</name>
-  <version>1.2</version>
+  <version>1.3</version>
   <vendor email="contact@chylex.com" url="https://chylex.com">chylex</vendor>
 
   <description>
@@ -10,6 +10,12 @@
   </description>
   
   <change-notes><![CDATA[
+    <b>Version 1.3</b>
+    <ul>
+      <li>Added new icons related to VCS, unit tests, source code presentation and navigation, and more</li>
+      <li>Recolored import, export, rollback, and module dependencies tool window icons</li>
+      <li>Tweaked hue and brightness of purple icons</li>
+    </ul>
     <b>Version 1.2</b>
     <ul>
       <li>Added tool window icons for IDEs - CLion, PyCharm, and Rider</li>
