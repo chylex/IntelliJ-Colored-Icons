@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 32 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g id="Light">
-        <rect x="2" y="18" width="5.5" height="5.5" style="fill:#af74b1;"/>
+        <rect x="2" y="18" width="5.5" height="5.5" style="fill:#b76db7;"/>
         <rect x="8.5" y="18" width="5.5" height="5.5" style="fill:#6e6e6e;"/>
         <rect x="2" y="5" width="5.5" height="5.5" style="fill:#59a869;"/>
         <rect x="8.5" y="5" width="5.5" height="5.5" style="fill:#eda200;"/>
@@ -12,7 +12,7 @@
     </g>
     <g id="Dark">
         <rect x="24.5" y="18" width="5.5" height="5.5" style="fill:#afb1b3;"/>
-        <rect x="18" y="18" width="5.5" height="5.5" style="fill:#a664ae;"/>
+        <rect x="18" y="18" width="5.5" height="5.5" style="fill:#b066b0;"/>
         <rect x="18" y="5" width="5.5" height="5.5" style="fill:#499c54;"/>
         <rect x="24.5" y="5" width="5.5" height="5.5" style="fill:#f0a732;"/>
         <rect x="18" y="11.5" width="5.5" height="5.5" style="fill:#3592c4;"/>

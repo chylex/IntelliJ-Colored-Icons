@@ -2,7 +2,7 @@
     <g>
         <rect x="2" y="4" width="2" height="10" style="fill:#afb1b3;"/>
         <rect x="2" y="12" width="10" height="2" style="fill:#afb1b3;"/>
-        <path d="M14.204,3.204l-1.414,-1.414l-5.93,5.93l1.414,1.414l5.93,-5.93Z" style="fill:#a664ae;fill-rule:nonzero;"/>
-        <path d="M6,4l6,6l-6,0l0,-6Z" style="fill:#a664ae;fill-rule:nonzero;"/>
+        <path d="M14.204,3.204l-1.414,-1.414l-5.93,5.93l1.414,1.414l5.93,-5.93Z" style="fill:#b066b0;fill-rule:nonzero;"/>
+        <path d="M6,4l6,6l-6,0l0,-6Z" style="fill:#b066b0;fill-rule:nonzero;"/>
     </g>
 </svg>
