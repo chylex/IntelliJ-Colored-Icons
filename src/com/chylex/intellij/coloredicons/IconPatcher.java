@@ -15,8 +15,10 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("actions/back");
 		addPathWithDark("actions/buildAutoReloadChanges");
 		addPathWithDark("actions/cancel");
+		addPathWithDark("actions/CheckMulticaret");
 		addPathWithDark("actions/collapseall");
 		addPathWithDark("actions/download");
+		addPathWithDark("actions/dump");
 		addPathWithDark("actions/edit");
 		addPathWithDark("actions/editScheme");
 		addPathWithDark("actions/editSource");
@@ -54,6 +56,8 @@ public class IconPatcher extends IconPathPatcher{
 		
 		addPathWithDark("general/add");
 		addPathWithDark("general/addJdk");
+		addPathWithDark("general/autoscrollFromSource");
+		addPathWithDark("general/autoscrollToSource");
 		addPathWithDark("general/filter");
 		addPathWithDark("general/layout");
 		addPathWithDark("general/layoutEditorOnly");
@@ -77,8 +81,11 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("icons/cherryPick");
 		addPathWithDark("icons/CMakeToolWindow");
 		addPathWithDark("icons/ConcurrencyDiagramToolwindow");
+		addPathWithDark("icons/debug_listen_on");
 		addPathWithDark("icons/ejbToolWindow");
+		addPathWithDark("icons/gradleNavigate");
 		addPathWithDark("icons/IntelliSort");
+		addPathWithDark("icons/interTypes");
 		addPathWithDark("icons/javaeeToolWindow");
 		addPathWithDark("icons/jpaConsoleToolWindow");
 		addPathWithDark("icons/jpaToolWindow");
@@ -88,6 +95,8 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("icons/toolWindowConsole");
 		addPathWithDark("icons/toolWindowDatabase");
 		addPathWithDark("icons/toolwindowDatabaseChanges");
+		addPathWithDark("icons/toolWindowDsm");
+		addPathWithDark("icons/toolwindowEndpoints");
 		addPathWithDark("icons/toolWindowGradle");
 		addPathWithDark("icons/toolWindowSQLGenerator");
 		addPathWithDark("icons/buildTools/gulp_toolwindow");
@@ -98,6 +107,7 @@ public class IconPatcher extends IconPathPatcher{
 		
 		addPathWithDark("images/toolWindowMaven");
 		addPathWithDark("images/transferToolWindow");
+		addPathWithDark("images/updateFolders");
 		addPathWithDark("images/webServerToolWindow");
 		
 		addPathWithDark("modules/addExcludedRoot");
@@ -105,6 +115,7 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("objectBrowser/sortByType");
 		addPathWithDark("objectBrowser/sorted");
 		addPathWithDark("objectBrowser/sortedByUsage");
+		addPathWithDark("objectBrowser/visibilitySort");
 		
 		addPathWithDark("org/jetbrains/plugins/github/pullRequestsToolWindow");
 		
@@ -135,6 +146,7 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("toolbarDecorator/import");
 		
 		addPathWithDark("toolwindows/documentation");
+		addPathWithDark("toolwindows/toolWindowAnalyzeDataflow");
 		addPathWithDark("toolwindows/toolWindowAnt");
 		addPathWithDark("toolwindows/toolWindowBuild");
 		addPathWithDark("toolwindows/toolWindowChanges");
@@ -155,6 +167,7 @@ public class IconPatcher extends IconPathPatcher{
 		addPathWithDark("toolwindows/toolWindowTodo");
 		addPathWithDark("toolwindows/webToolWindow");
 		
+		addPathWithDark("vcs/changelist");
 		addPathWithDark("vcs/history");
 		addPathWithDark("vcs/merge");
 		

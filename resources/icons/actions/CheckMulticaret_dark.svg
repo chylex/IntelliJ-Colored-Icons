@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <g>
+        <rect x="9" y="8" width="1" height="1" style="fill:#afb1b3;"/>
+        <rect x="11" y="8" width="1" height="1" style="fill:#afb1b3;"/>
+        <rect x="9" y="15" width="1" height="1" style="fill:#afb1b3;"/>
+        <rect x="11" y="15" width="1" height="1" style="fill:#afb1b3;"/>
+        <rect x="10" y="9" width="1" height="6" style="fill:#afb1b3;"/>
+        <rect x="13" y="8" width="1" height="1" style="fill:#afb1b3;"/>
+        <rect x="15" y="8" width="1" height="1" style="fill:#afb1b3;"/>
+        <rect x="13" y="15" width="1" height="1" style="fill:#afb1b3;"/>
+        <rect x="15" y="15" width="1" height="1" style="fill:#afb1b3;"/>
+        <rect x="14" y="9" width="1" height="6" style="fill:#afb1b3;"/>
+        <path d="M7.132,2l-1.035,1l-5.097,0l0,6l6,0l0,-1.358l1,-0.966l0,3.324l-8,0l0,-8l7.132,0Z" style="fill:#afb1b3;"/>
+        <path d="M8.968,2l1.032,0.98l-5.522,5.242l-2.811,-2.669l1.032,-0.98l1.779,1.689l4.49,-4.262Z" style="fill:#f0a732;fill-rule:nonzero;"/>
+    </g>
+</svg>
