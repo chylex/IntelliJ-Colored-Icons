@@ -61,7 +61,7 @@ final class FixSVGs{
 				System.out.println("Updated file: " + file);
 			}
 			
-			FileUtils.writeLines(file, encoding, lines);
+			FileUtils.writeLines(file, encoding, lines, "\n");
 		}
 		
 		System.out.println("Total updated files: " + changedFiles);
