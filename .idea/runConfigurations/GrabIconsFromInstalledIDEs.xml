@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="GrabIconsFromInstalledIDEs" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="com.chylex.intellij.coloredicons.GrabIconsFromInstalledIDEs" />
-    <module name="IntelliJ-Colored-Icons" />
+    <module name="ColoredIcons.helpers" />
     <shortenClasspath name="MANIFEST" />
     <method v="2">
       <option name="Make" enabled="true" />

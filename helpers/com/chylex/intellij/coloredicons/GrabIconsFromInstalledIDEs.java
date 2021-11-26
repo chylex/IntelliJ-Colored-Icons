@@ -1,5 +1,4 @@
 package com.chylex.intellij.coloredicons;
-import com.google.common.collect.ImmutableList;
 import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
 import org.apache.commons.compress.archivers.zip.ZipFile;
 import org.apache.commons.io.FileUtils;
@@ -22,13 +21,13 @@ import java.util.stream.Stream;
 import static java.util.Comparator.comparing;
 
 final class GrabIconsFromInstalledIDEs{
-	private static final ImmutableList<String> EXPECTED_VIEW_BOXES_LOWERCASE = ImmutableList.of(
+	private static final List<String> EXPECTED_VIEW_BOXES_LOWERCASE = List.of(
 		"viewbox=\"0 0 12 12\"",
 		"viewbox=\"0 0 16 16\"",
 		"viewbox=\"0 0 13 13\""
 	);
 	
-	private static final ImmutableList<String> EXPECTED_COLORS_LOWERCASE = ImmutableList.of(
+	private static final List<String> EXPECTED_COLORS_LOWERCASE = List.of(
 		"#afb1b3",
 		"#6e6e6e"
 	);

@@ -1,5 +1,4 @@
 package com.chylex.intellij.coloredicons;
-import com.google.common.collect.ImmutableMap;
 import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
@@ -9,17 +8,18 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import static java.util.Map.entry;
 
 final class FixSVGs{
 	public static void main(final String[] args) throws IOException{
 		final Charset charset = StandardCharsets.UTF_8;
 		final String encoding = charset.name();
 		
-		final Map<String, String> svgRemapping = ImmutableMap.<String, String>builder()
-			.put("<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 13 13\"", "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13\" height=\"13\" viewBox=\"0 0 13 13\">")
-			.put("<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 16 16\"", "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\">")
-			.put("<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 12 12\"", "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\">")
-			.build();
+		final Map<String, String> svgRemapping = Map.ofEntries(
+			entry("<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 13 13\"", "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"13\" height=\"13\" viewBox=\"0 0 13 13\">"),
+			entry("<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 16 16\"", "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\">"),
+			entry("<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 12 12\"", "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\">")
+		);
 		
 		final Set<String> svgValidTags = new HashSet<>(svgRemapping.values());
 		
