@@ -6,11 +6,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IconPatcher extends IconPathPatcher{
+public class IconPatcher extends IconPathPatcher {
 	private final ClassLoader classLoader = getClass().getClassLoader();
 	private final Map<String, String> iconPaths = new HashMap<>();
 	
-	public IconPatcher(){
+	public IconPatcher() {
 		addPathWithDark("actions/AddMulticaret");
 		addPathWithDark("actions/back");
 		addPathWithDark("actions/buildAutoReloadChanges");
@@ -178,20 +178,20 @@ public class IconPatcher extends IconPathPatcher{
 		IconLoader.installPathPatcher(this);
 	}
 	
-	private void addPathWithDark(final String path){
+	private void addPathWithDark(final String path) {
 		iconPaths.put('/' + path + ".svg", "/icons/" + path + ".svg");
 		iconPaths.put('/' + path + "_dark.svg", "/icons/" + path + "_dark.svg");
 	}
 	
 	@Nullable
 	@Override
-	public String patchPath(@NotNull final String path, final ClassLoader classLoaderIgnore){
+	public String patchPath(@NotNull final String path, final ClassLoader classLoaderIgnore) {
 		return iconPaths.get(path);
 	}
 	
 	@Nullable
 	@Override
-	public ClassLoader getContextClassLoader(@NotNull final String path, final ClassLoader originalClassLoader){
+	public ClassLoader getContextClassLoader(@NotNull final String path, final ClassLoader originalClassLoader) {
 		return classLoader;
 	}
 }

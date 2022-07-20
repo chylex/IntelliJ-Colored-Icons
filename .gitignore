@@ -1,16 +1,9 @@
-/.idea/$CACHE_FILE$
-/.idea/compiler.xml
-/.idea/dictionaries
-/.idea/gradle.xml
-/.idea/inspectionProfiles
-/.idea/jarRepositories.xml
-/.idea/libraries
-/.idea/misc.xml
-/.idea/modules
-/.idea/modules.xml
-/.idea/uiDesigner.xml
-/.idea/*.iml
-/.idea/.name
+/.idea/*
+!/.idea/runConfigurations
+!/.idea/compiler.xml
+!/.idea/encodings.xml
+!/.idea/gradle.xml
+!/.idea/vcs.xml
 
 /.gradle/
 /build/

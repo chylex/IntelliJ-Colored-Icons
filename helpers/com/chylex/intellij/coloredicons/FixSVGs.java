@@ -10,8 +10,8 @@ import java.util.Map;
 import java.util.Set;
 import static java.util.Map.entry;
 
-final class FixSVGs{
-	public static void main(final String[] args) throws IOException{
+final class FixSVGs {
+	public static void main(final String[] args) throws IOException {
 		final Charset charset = StandardCharsets.UTF_8;
 		final String encoding = charset.name();
 		
@@ -25,38 +25,38 @@ final class FixSVGs{
 		
 		int changedFiles = 0;
 		
-		for(final File file : FileUtils.listFiles(new File("./resources/icons"), new String[]{ "svg" }, true)){
+		for (final File file : FileUtils.listFiles(new File("./resources/icons"), new String[]{ "svg" }, true)) {
 			boolean hasChanged = false;
 			
 			final List<String> lines = FileUtils.readLines(file, charset);
 			
-			if (lines.get(0).startsWith("<?xml")){
+			if (lines.get(0).startsWith("<?xml")) {
 				lines.remove(0);
 				hasChanged = true;
 			}
 			
-			if (lines.get(0).startsWith("<!DOCTYPE")){
+			if (lines.get(0).startsWith("<!DOCTYPE")) {
 				lines.remove(0);
 				hasChanged = true;
 			}
 			
 			final String svg = lines.get(0);
 			
-			if (!svgValidTags.contains(svg)){
+			if (!svgValidTags.contains(svg)) {
 				final String correctedTag = svgRemapping.keySet().stream().filter(svg::contains).findAny().map(svgRemapping::get).orElse(null);
 				
-				if (correctedTag == null){
+				if (correctedTag == null) {
 					System.out.println("Error processing <svg> tag in file: " + file);
 					System.out.println("  " + svg);
 					continue;
 				}
-				else{
+				else {
 					lines.set(0, correctedTag);
 					hasChanged = true;
 				}
 			}
 			
-			if (hasChanged){
+			if (hasChanged) {
 				++changedFiles;
 				System.out.println("Updated file: " + file);
 			}
