@@ -14,7 +14,7 @@ repositories {
 
 intellij {
 	type.set("IU")
-	version.set("222-EAP-SNAPSHOT")
+	version.set("LATEST-EAP-SNAPSHOT")
 	updateSinceUntilBuild.set(false)
 }
 
@@ -23,7 +23,7 @@ tasks.buildSearchableOptions {
 }
 
 configurations {
-	create("extraIDEs")
+	create("ides")
 }
 
 java {
@@ -45,12 +45,14 @@ sourceSets {
 dependencies {
 	"helpersImplementation"("commons-io:commons-io:2.11.0")
 	
+	"ides"("com.jetbrains.intellij.idea:ideaIU:LATEST-EAP-SNAPSHOT")
+	
 	if (System.getProperty("downloadExtraIDEs", "") == "true") {
-		"extraIDEs"("com.jetbrains.intellij.clion:clion:LATEST-EAP-SNAPSHOT")
-		"extraIDEs"("com.jetbrains.intellij.goland:goland:LATEST-EAP-SNAPSHOT")
-		"extraIDEs"("com.jetbrains.intellij.phpstorm:phpstorm:LATEST-EAP-SNAPSHOT")
-		"extraIDEs"("com.jetbrains.intellij.pycharm:pycharmPY:LATEST-EAP-SNAPSHOT")
-		"extraIDEs"("com.jetbrains.intellij.rider:riderRD:2022.3-SNAPSHOT")
+		"ides"("com.jetbrains.intellij.clion:clion:LATEST-EAP-SNAPSHOT")
+		"ides"("com.jetbrains.intellij.goland:goland:LATEST-EAP-SNAPSHOT")
+		"ides"("com.jetbrains.intellij.phpstorm:phpstorm:LATEST-EAP-SNAPSHOT")
+		"ides"("com.jetbrains.intellij.pycharm:pycharmPY:LATEST-EAP-SNAPSHOT")
+		"ides"("com.jetbrains.intellij.rider:riderRD:2022.3-SNAPSHOT")
 	}
 }
 
@@ -70,8 +72,7 @@ fun getClassPathFolders(configuration: Configuration): List<String> {
 createHelperTask("fixSVGs",                    main = "FixSVGs")
 createHelperTask("grabIconsFromInstalledIDEs", main = "GrabIcons\$FromInstalledIDEs")
 createHelperTask("grabIconsFromGradle",        main = "GrabIcons\$FromArgumentPaths") {
-	val intellijLibraries = getClassPathFolders(project.configurations.compileClasspath.get())
-	val otherIdeLibraries = getClassPathFolders(project.configurations.getByName("extraIDEs"))
+	val ideLibraries = getClassPathFolders(project.configurations.getByName("ides"))
 	val downloadedPlugins = File(buildDir, "idea-sandbox/system/plugins").absolutePath
-	it.args = intellijLibraries + otherIdeLibraries + downloadedPlugins
+	it.args = ideLibraries + downloadedPlugins
 }
