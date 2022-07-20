@@ -11,6 +11,7 @@ public class IconPatcher extends IconPathPatcher {
 	private final Map<String, String> iconPaths = new HashMap<>();
 	
 	public IconPatcher() {
+		addPathWithDark("actions/addList");
 		addPathWithDark("actions/AddMulticaret");
 		addPathWithDark("actions/back");
 		addPathWithDark("actions/buildAutoReloadChanges");
@@ -78,6 +79,7 @@ public class IconPatcher extends IconPathPatcher {
 		addPathWithDark("hierarchy/subtypes");
 		addPathWithDark("hierarchy/supertypes");
 		
+		addPathWithDark("icons/artifactSmall");
 		addPathWithDark("icons/cherryPick");
 		addPathWithDark("icons/CMakeToolWindow");
 		addPathWithDark("icons/ConcurrencyDiagramToolwindow");
@@ -99,6 +101,7 @@ public class IconPatcher extends IconPathPatcher {
 		addPathWithDark("icons/toolwindowEndpoints");
 		addPathWithDark("icons/toolWindowGradle");
 		addPathWithDark("icons/toolWindowSQLGenerator");
+		addPathWithDark("icons/youTrack");
 		addPathWithDark("icons/buildTools/gulp_toolwindow");
 		addPathWithDark("icons/buildTools/grunt/grunt_toolwindow");
 		addPathWithDark("icons/buildTools/npm/npm_13");
@@ -110,6 +113,8 @@ public class IconPatcher extends IconPathPatcher {
 		addPathWithDark("images/updateFolders");
 		addPathWithDark("images/webServerToolWindow");
 		
+		addPathWithDark("img/featureTrainerToolWindow");
+		
 		addPathWithDark("modules/addExcludedRoot");
 		
 		addPathWithDark("objectBrowser/sortByType");
@@ -118,6 +123,8 @@ public class IconPatcher extends IconPathPatcher {
 		addPathWithDark("objectBrowser/visibilitySort");
 		
 		addPathWithDark("org/jetbrains/plugins/github/pullRequestsToolWindow");
+		addPathWithDark("org/jetbrains/plugins/scala/images/sbtShellToolwin");
+		addPathWithDark("org/jetbrains/plugins/scala/images/sbtToolwin");
 		
 		addPathWithDark("resources/icons/bvToolWindow");
 		addPathWithDark("resources/icons/hibConsoleToolWindow");
@@ -146,8 +153,12 @@ public class IconPatcher extends IconPathPatcher {
 		addPathWithDark("toolbarDecorator/import");
 		
 		addPathWithDark("toolwindows/documentation");
+		addPathWithDark("toolwindows/notifications");
+		addPathWithDark("toolwindows/notificationsNew");
+		addPathWithDark("toolwindows/notificationsNewImportant");
 		addPathWithDark("toolwindows/toolWindowAnalyzeDataflow");
 		addPathWithDark("toolwindows/toolWindowAnt");
+		addPathWithDark("toolwindows/toolWindowBookmarks");
 		addPathWithDark("toolwindows/toolWindowBuild");
 		addPathWithDark("toolwindows/toolWindowChanges");
 		addPathWithDark("toolwindows/toolWindowCommit");
@@ -160,7 +171,7 @@ public class IconPatcher extends IconPathPatcher {
 		addPathWithDark("toolwindows/toolWindowMessages");
 		addPathWithDark("toolwindows/toolWindowModuleDependencies");
 		addPathWithDark("toolwindows/toolWindowProfiler");
-		addPathWithDark("toolwindows/toolWindowProject"); // TODO not working
+		addPathWithDark("toolwindows/toolWindowProject");
 		addPathWithDark("toolwindows/toolWindowRun");
 		addPathWithDark("toolwindows/toolWindowServices");
 		addPathWithDark("toolwindows/toolWindowStructure");
