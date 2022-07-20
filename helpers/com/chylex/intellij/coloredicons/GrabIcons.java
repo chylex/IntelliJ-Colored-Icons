@@ -37,6 +37,16 @@ abstract class GrabIcons {
 	private static final boolean FLATTEN_ARCHIVE_PATHS = true;
 	private static final boolean FLATTEN_SVG_PATHS = false;
 	
+	private static final class ArchiveExtractionStats {
+		int foundSVGs = 0;
+		int uniqueSVGs = 0;
+		
+		void sumWith(final ArchiveExtractionStats other) {
+			foundSVGs += other.foundSVGs;
+			uniqueSVGs += other.uniqueSVGs;
+		}
+	}
+	
 	protected final void run() throws IOException {
 		final Stream<Path> libAndPluginFolders = findLibAndPluginFolders();
 		if (libAndPluginFolders == null) {
@@ -133,24 +143,26 @@ abstract class GrabIcons {
 	
 	@SuppressWarnings({ "NestedAssignment", "AutoBoxing" })
 	private static void extractSVGsFromArchiveStream(final Path extractionBasePath, final String archiveName, final ZipInputStream inputStream) throws IOException {
-		int extractedFilesDirectly = 0;
+		final ArchiveExtractionStats stats = new ArchiveExtractionStats();
 		
 		ZipEntry entry;
 		while ((entry = inputStream.getNextEntry()) != null) {
-			extractedFilesDirectly += extractSVGsFromArchiveEntry(extractionBasePath, archiveName, inputStream, entry);
+			stats.sumWith(extractSVGsFromArchiveEntry(extractionBasePath, archiveName, inputStream, entry));
 		}
 		
-		if (extractedFilesDirectly > 0) {
-			System.out.println("Extracted " + String.format("%3d", extractedFilesDirectly) + " SVG(s) from: " + archiveName);
+		if (stats.foundSVGs > 0) {
+			final String foundStr = String.format("%4d", stats.foundSVGs);
+			final String uniqueStr = String.format("%4d", stats.uniqueSVGs);
+			System.out.println("Found " + uniqueStr + " new, " + foundStr + " total SVG(s) in: " + archiveName);
 		}
 	}
 	
-	private static int extractSVGsFromArchiveEntry(final Path basePath, final String archiveName, final ZipInputStream parentInputStream, final ZipEntry entry) throws IOException {
-		if (entry.isDirectory()) {
-			return 0;
-		}
+	private static ArchiveExtractionStats extractSVGsFromArchiveEntry(final Path basePath, final String archiveName, final ZipInputStream parentInputStream, final ZipEntry entry) throws IOException {
+		final ArchiveExtractionStats stats = new ArchiveExtractionStats();
 		
-		int extractedFilesDirectly = 0;
+		if (entry.isDirectory()) {
+			return stats;
+		}
 		
 		final String entryName = entry.getName();
 		final String entryNameLowerCase = entryName.toLowerCase(Locale.ROOT);
@@ -165,25 +177,25 @@ abstract class GrabIcons {
 			}
 		}
 		else if (entryNameLowerCase.endsWith(".svg")) {
-			if (extractSVG(parentInputStream, entry, getRelativePathForExtraction(basePath, entry))) {
-				++extractedFilesDirectly;
-			}
+			extractSVG(parentInputStream, entry, getRelativePathForExtraction(basePath, entry), stats);
 		}
 		
-		return extractedFilesDirectly;
+		return stats;
 	}
 	
 	private static Path getRelativePathForExtraction(final Path basePath, final ZipEntry entry) {
 		return basePath.resolve(FLATTEN_SVG_PATHS ? entry.getName().replace("/", "__") : entry.getName());
 	}
 	
-	private static boolean extractSVG(final ZipInputStream inputStream, final ZipEntry entry, final Path basePath) throws IOException {
+	private static void extractSVG(final ZipInputStream inputStream, final ZipEntry entry, final Path basePath, final ArchiveExtractionStats stats) throws IOException {
 		final byte[] svgBytes = inputStream.readAllBytes();
 		final String svgText = new String(svgBytes, StandardCharsets.UTF_8);
 		
 		if (!isValidSVG(svgText)) {
-			return false;
+			return;
 		}
+		
+		++stats.foundSVGs;
 		
 		Path svgPath = basePath;
 		
@@ -193,7 +205,7 @@ abstract class GrabIcons {
 		
 		while (Files.exists(svgPath)) {
 			if (Files.size(svgPath) == entry.getSize() && IOUtils.contentEquals(new ByteArrayInputStream(svgBytes), Files.newInputStream(svgPath, StandardOpenOption.READ))) {
-				return false;
+				return;
 			}
 			
 			svgPath = svgParentFolder.resolve(FilenameUtils.removeExtension(originalFileName) + '_' + (++duplicateCounter) + '.' + FilenameUtils.getExtension(originalFileName));
@@ -203,7 +215,7 @@ abstract class GrabIcons {
 		Files.write(svgPath, svgBytes);
 		Files.setLastModifiedTime(svgPath, entry.getLastModifiedTime());
 		
-		return true;
+		++stats.uniqueSVGs;
 	}
 	
 	private static boolean isValidSVG(final String svg) {
