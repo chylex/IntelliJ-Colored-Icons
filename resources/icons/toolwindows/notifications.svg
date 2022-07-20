@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
-    <path d="M2.502,4.485C2.788,2.485 4.5,1 6.521,1C8.523,1 10.226,2.46 10.532,4.438L11.083,8L2,8L2.502,4.485Z" style="fill:#eda200;fill-rule:nonzero;"/>
-    <path d="M1,10C1,8.343 2.343,7 4,7L9,7C10.657,7 12,8.343 12,10L1,10Z" style="fill:#eda200;fill-rule:nonzero;"/>
-    <path d="M8.333,11C8.333,12.105 7.513,13 6.5,13C5.488,13 4.667,12.105 4.667,11C5.583,11 7.417,11 8.333,11Z" style="fill:#eda200;fill-rule:nonzero;"/>
+    <path d="M2.502,4.485c0.286,-2 1.998,-3.485 4.019,-3.485c2.002,-0 3.705,1.46 4.011,3.438l0.551,3.562l-9.083,0l0.502,-3.515Z" style="fill:#eda200;fill-rule:nonzero;"/>
+    <path d="M1,10c0,-1.657 1.343,-3 3,-3l5,0c1.657,0 3,1.343 3,3l-11,0Z" style="fill:#eda200;fill-rule:nonzero;"/>
+    <path d="M8.333,11c0,1.105 -0.82,2 -1.833,2c-1.012,0 -1.833,-0.895 -1.833,-2l3.666,0Z" style="fill:#eda200;fill-rule:nonzero;"/>
 </svg>

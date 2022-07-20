@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13">
     <g>
-        <path d="M6,10L2,10L2,5L11,5L11,6L12,6L12,2L1,2L1,11L6,11L6,10Z" style="fill:#afb1b3;"/>
+        <path d="M6,10l-4,0l0,-5l9,0l0,1l1,0l0,-4l-11,0l0,9l5,0l0,-1Z" style="fill:#afb1b3;fill-rule:nonzero;"/>
         <g transform="matrix(0.965926,0.258819,-0.258819,0.965926,2.7558,-2.1844)">
-            <path d="M9.674,6.374L12.272,7.874L12.272,10.874L9.674,12.374L7.076,10.874L7.076,7.874L9.674,6.374Z" style="fill:#499c54;"/>
+            <path d="M9.674,6.374l2.598,1.5l0,3l-2.598,1.5l-2.598,-1.5l0,-3l2.598,-1.5Z" style="fill:#499c54;fill-rule:nonzero;"/>
         </g>
     </g>
 </svg>

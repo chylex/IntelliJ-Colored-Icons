@@ -2,5 +2,5 @@
     <rect x="3" y="3" width="10" height="2" style="fill:#afb1b3;"/>
     <rect x="3" y="7" width="7" height="2" style="fill:#afb1b3;"/>
     <rect x="3" y="11" width="4" height="2" style="fill:#afb1b3;"/>
-    <path d="M13,8L11,8L11,11L8,11L8,13L11,13L11,16L13,16L13,13L16,13L16,11L13,11L13,8Z" style="fill:#499c54;"/>
+    <path d="M13,8l-2,0l0,3l-3,0l0,2l3,0l0,3l2,0l0,-3l3,0l0,-2l-3,0l0,-3Z" style="fill:#499c54;fill-rule:nonzero;"/>
 </svg>
