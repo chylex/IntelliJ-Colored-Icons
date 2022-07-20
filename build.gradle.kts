@@ -1,5 +1,3 @@
-@file:Suppress("ConvertLambdaToReference")
-
 plugins {
 	java
 	idea
@@ -11,15 +9,21 @@ version = "1.3"
 
 repositories {
 	mavenCentral()
+	maven("https://www.jetbrains.com/intellij-repository/snapshots/")
 }
 
 intellij {
-	version.set("2022.1")
+	type.set("IU")
+	version.set("222-EAP-SNAPSHOT")
 	updateSinceUntilBuild.set(false)
 }
 
 tasks.buildSearchableOptions {
 	enabled = false
+}
+
+configurations {
+	create("extraIDEs")
 }
 
 java {
@@ -40,5 +44,34 @@ sourceSets {
 
 dependencies {
 	"helpersImplementation"("commons-io:commons-io:2.11.0")
-	"helpersImplementation"("org.apache.commons:commons-compress:1.21")
+	
+	if (System.getProperty("downloadExtraIDEs", "") == "true") {
+		"extraIDEs"("com.jetbrains.intellij.clion:clion:LATEST-EAP-SNAPSHOT")
+		"extraIDEs"("com.jetbrains.intellij.goland:goland:LATEST-EAP-SNAPSHOT")
+		"extraIDEs"("com.jetbrains.intellij.phpstorm:phpstorm:LATEST-EAP-SNAPSHOT")
+		"extraIDEs"("com.jetbrains.intellij.pycharm:pycharmPY:LATEST-EAP-SNAPSHOT")
+		"extraIDEs"("com.jetbrains.intellij.rider:riderRD:2022.3-SNAPSHOT")
+	}
+}
+
+fun createHelperTask(name: String, main: String, configure: ((JavaExec) -> Unit)? = null) {
+	tasks.create(name, JavaExec::class.java) {
+		group = "helpers"
+		mainClass.set("com.chylex.intellij.coloredicons.$main")
+		classpath = sourceSets.getByName("helpers").runtimeClasspath
+		configure?.invoke(this)
+	}
+}
+
+fun getClassPathFolders(configuration: Configuration): List<String> {
+	return configuration.files.map(File::getParentFile).distinct().map(File::getAbsolutePath)
+}
+
+createHelperTask("fixSVGs",                    main = "FixSVGs")
+createHelperTask("grabIconsFromInstalledIDEs", main = "GrabIcons\$FromInstalledIDEs")
+createHelperTask("grabIconsFromGradle",        main = "GrabIcons\$FromArgumentPaths") {
+	val intellijLibraries = getClassPathFolders(project.configurations.compileClasspath.get())
+	val otherIdeLibraries = getClassPathFolders(project.configurations.getByName("extraIDEs"))
+	val downloadedPlugins = File(buildDir, "idea-sandbox/system/plugins").absolutePath
+	it.args = intellijLibraries + otherIdeLibraries + downloadedPlugins
 }
