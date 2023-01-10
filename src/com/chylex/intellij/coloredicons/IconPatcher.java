@@ -190,8 +190,8 @@ public class IconPatcher extends IconPathPatcher {
 	}
 	
 	private void addPathWithDark(final String path) {
-		iconPaths.put('/' + path + ".svg", "/icons/" + path + ".svg");
-		iconPaths.put('/' + path + "_dark.svg", "/icons/" + path + "_dark.svg");
+		iconPaths.put('/' + path + ".svg", "icons/" + path + ".svg");
+		iconPaths.put('/' + path + "_dark.svg", "icons/" + path + "_dark.svg");
 	}
 	
 	@Nullable
