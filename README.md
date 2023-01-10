@@ -1,6 +1,6 @@
-Adds color to many of the gray IntelliJ platform icons. Uses resources from https://github.com/JetBrains/intellij-community and some of the official IntelliJ platform plugins.
+Adds color to over 300 gray IntelliJ icons. Uses resources from https://github.com/JetBrains/intellij-community and some of the official IntelliJ platform plugins.
 
-First release includes 176 updated icons. It should be compatible with *most* IDEs based on the IntelliJ platform. Please report any issues in particular IDEs, and any icons you would like to see changed.
+The plugin is intended to be compatible with all IDEs based on the IntelliJ platform. Please report any issues in particular IDEs, and any icons you would like to see changed. Note that "New UI" is not supported.
 
 ![Example IDE elements](https://github.com/chylex/IntelliJ-Colored-Icons/blob/master/.github/readme/elements.png)
 
