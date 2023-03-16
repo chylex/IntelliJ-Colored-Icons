@@ -1,7 +1,7 @@
 plugins {
 	java
 	idea
-	id("org.jetbrains.intellij") version "1.7.0"
+	id("org.jetbrains.intellij") version "1.13.2"
 }
 
 group = "com.chylex.intellij.coloredicons"
@@ -14,7 +14,7 @@ repositories {
 
 intellij {
 	type.set("IU")
-	version.set("LATEST-EAP-SNAPSHOT")
+	version.set("2022.3.3")
 	updateSinceUntilBuild.set(false)
 }
 
@@ -27,7 +27,7 @@ configurations {
 }
 
 java {
-	toolchain.languageVersion.set(JavaLanguageVersion.of(11))
+	toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 }
 
 sourceSets {
@@ -45,9 +45,8 @@ sourceSets {
 dependencies {
 	"helpersImplementation"("commons-io:commons-io:2.11.0")
 	
-	"ides"("com.jetbrains.intellij.idea:ideaIU:LATEST-EAP-SNAPSHOT")
-	
 	if (System.getProperty("downloadExtraIDEs", "") == "true") {
+		"ides"("com.jetbrains.intellij.idea:ideaIU:LATEST-EAP-SNAPSHOT")
 		"ides"("com.jetbrains.intellij.clion:clion:LATEST-EAP-SNAPSHOT")
 		"ides"("com.jetbrains.intellij.goland:goland:LATEST-EAP-SNAPSHOT")
 		"ides"("com.jetbrains.intellij.phpstorm:phpstorm:LATEST-EAP-SNAPSHOT")
