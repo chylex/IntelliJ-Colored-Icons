@@ -76,5 +76,11 @@ createHelperTask("grabIconsFromInstalledIDEs", main = "GrabIcons\$FromInstalledI
 createHelperTask("grabIconsFromGradle",        main = "GrabIcons\$FromArgumentPaths") {
 	val ideLibraries = getClassPathFolders(project.configurations.getByName("ides"))
 	val downloadedPlugins = File(buildDir, "idea-sandbox/system/plugins").absolutePath
-	it.args = ideLibraries + downloadedPlugins
+	
+	if (File(downloadedPlugins).exists()) {
+		it.args = ideLibraries + downloadedPlugins
+	}
+	else {
+		it.args = ideLibraries
+	}
 }
