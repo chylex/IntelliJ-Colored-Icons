@@ -23,15 +23,26 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 abstract class GrabIcons {
-	private static final List<String> EXPECTED_VIEW_BOXES_LOWERCASE = List.of(
+	private static final List<String> EXPECTED_OLD_UI_VIEW_BOXES_LOWERCASE = List.of(
 		"viewbox=\"0 0 12 12\"",
-		"viewbox=\"0 0 16 16\"",
-		"viewbox=\"0 0 13 13\""
+		"viewbox=\"0 0 13 13\"",
+		"viewbox=\"0 0 16 16\""
 	);
 	
-	private static final List<String> EXPECTED_COLORS_LOWERCASE = List.of(
+	private static final List<String> EXPECTED_OLD_UI_COLORS_LOWERCASE = List.of(
 		"#afb1b3",
 		"#6e6e6e"
+	);
+	
+	private static final List<String> EXPECTED_NEW_UI_VIEW_BOXES_LOWERCASE = List.of(
+		"viewbox=\"0 0 14 14\"",
+		"viewbox=\"0 0 16 16\"",
+		"viewbox=\"0 0 20 20\""
+	);
+	
+	private static final List<String> EXPECTED_NEW_UI_COLORS_LOWERCASE = List.of(
+		"#6c707e",
+		"#ced0d6"
 	);
 	
 	private static final boolean FLATTEN_ARCHIVE_PATHS = true;
@@ -191,7 +202,8 @@ abstract class GrabIcons {
 		final byte[] svgBytes = inputStream.readAllBytes();
 		final String svgText = new String(svgBytes, StandardCharsets.UTF_8);
 		
-		if (!isValidSVG(svgText)) {
+		if (!isValidSVG(svgText, EXPECTED_OLD_UI_VIEW_BOXES_LOWERCASE, EXPECTED_OLD_UI_COLORS_LOWERCASE) &&
+			!isValidSVG(svgText, EXPECTED_NEW_UI_VIEW_BOXES_LOWERCASE, EXPECTED_NEW_UI_COLORS_LOWERCASE)) {
 			return;
 		}
 		
@@ -218,16 +230,16 @@ abstract class GrabIcons {
 		++stats.uniqueSVGs;
 	}
 	
-	private static boolean isValidSVG(final String svg) {
+	private static boolean isValidSVG(final String svg, final List<String> expectedViewBoxes, final List<String> expectedColors) {
 		boolean hasExpectedViewBox = false;
 		boolean hasExpectedColor = false;
 		
 		for (final String line : svg.lines().map(line -> line.toLowerCase(Locale.ROOT)).toArray(String[]::new)) {
-			if (EXPECTED_VIEW_BOXES_LOWERCASE.stream().anyMatch(line::contains)) {
+			if (expectedViewBoxes.stream().anyMatch(line::contains)) {
 				hasExpectedViewBox = true;
 			}
 			
-			if (EXPECTED_COLORS_LOWERCASE.stream().anyMatch(line::contains)) {
+			if (expectedColors.stream().anyMatch(line::contains)) {
 				hasExpectedColor = true;
 			}
 			
