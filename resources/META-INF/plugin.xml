@@ -36,7 +36,6 @@
     </ul>
   ]]></change-notes>
   
-  <idea-version since-build="223.0" />
   <depends>com.intellij.modules.platform</depends>
   
   <application-components>

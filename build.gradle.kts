@@ -1,7 +1,6 @@
 plugins {
 	java
-	idea
-	id("org.jetbrains.intellij") version "1.13.2"
+	id("org.jetbrains.intellij") version "1.15.0"
 }
 
 group = "com.chylex.intellij.coloredicons"
@@ -14,8 +13,12 @@ repositories {
 
 intellij {
 	type.set("IU")
-	version.set("2022.3.3")
+	version.set("2023.2")
 	updateSinceUntilBuild.set(false)
+}
+
+tasks.patchPluginXml {
+	sinceBuild.set("232")
 }
 
 tasks.buildSearchableOptions {
