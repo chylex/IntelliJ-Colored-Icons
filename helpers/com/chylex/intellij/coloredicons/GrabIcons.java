@@ -256,57 +256,82 @@ abstract class GrabIcons {
 		}
 	}
 	
+	@SuppressWarnings("CallToSystemGetenv")
 	public static final class FromInstalledIDEs extends GrabIcons {
 		public static void main(final String[] args) throws IOException {
 			new FromInstalledIDEs().run();
 		}
 		
-		@SuppressWarnings("CallToSystemGetenv")
 		@Override
 		protected Stream<Path> findLibAndPluginFolders() {
+			return Stream.concat(findLibAndPluginFoldersFromOldToolbox(), findLibAndPluginFoldersFromNewToolbox()).filter(Files::isDirectory); // catches non-existent paths too
+		}
+		
+		private static Stream<Path> findLibAndPluginFoldersFromOldToolbox() {
+			System.out.println("Searching in %LOCALAPPDATA%\\JetBrains\\Toolbox\\apps...");
+			
 			final String localAppData = System.getenv("LOCALAPPDATA");
 			
 			if (localAppData == null) {
-				System.out.println("Missing %LOCALAPPDATA%, only Windows Vista or newer are supported.");
-				return null;
+				System.out.println("Found nothing, %LOCALAPPDATA% does not exist.");
+				return Stream.of();
 			}
 			
 			final Path toolboxAppsFolder = Paths.get(localAppData, "JetBrains", "Toolbox", "apps");
 			
 			if (!Files.exists(toolboxAppsFolder)) {
-				System.out.println("Missing JetBrains Toolbox installation folder at: " + toolboxAppsFolder);
-				return null;
+				System.out.println("Found nothing, old Toolbox installation folder does not exist.");
+				return Stream.of();
 			}
 			
-			return list(toolboxAppsFolder)
-				.filter(Files::isDirectory)
-				.flatMap(FromInstalledIDEs::getAppChannelFolders)
-				.flatMap(FromInstalledIDEs::getLibAndPluginsFolders);
+			return listDirectories(toolboxAppsFolder)
+				.flatMap(FromInstalledIDEs::listDirectories)
+				.filter(child -> getFileNameLowerCase(child).startsWith("ch-"))
+				.flatMap(FromInstalledIDEs::listDirectories)
+				.flatMap(child -> {
+					final String name = getFileNameLowerCase(child);
+					
+					if (name.contains(".remove-")) {
+						return Stream.empty();
+					}
+					else if (name.endsWith(".plugins")) {
+						return Stream.of(child);
+					}
+					else {
+						return Stream.of(child.resolve("lib"), child.resolve("plugins"));
+					}
+				});
 		}
 		
-		private static Stream<Path> getAppChannelFolders(final Path appFolder) {
-			return list(appFolder).filter(Files::isDirectory).filter(child -> getFileNameLowerCase(child).startsWith("ch-"));
+		private static Stream<Path> findLibAndPluginFoldersFromNewToolbox() {
+			System.out.println("Searching in %LOCALAPPDATA%\\Programs...");
+			
+			final String localAppData = System.getenv("LOCALAPPDATA");
+			
+			if (localAppData == null) {
+				System.out.println("Found nothing, %LOCALAPPDATA% does not exist.");
+				return Stream.of();
+			}
+			
+			final Path programsFolder = Paths.get(localAppData, "Programs");
+			
+			if (!Files.exists(programsFolder)) {
+				System.out.println("Found nothing, Programs folder does not exist.");
+				return Stream.of();
+			}
+			
+			return listDirectories(programsFolder)
+				.filter(FromInstalledIDEs::matchesNewToolboxInstallation)
+				.flatMap(child -> Stream.of(child.resolve("lib"), child.resolve("plugins")));
 		}
 		
-		private static Stream<Path> getLibAndPluginsFolders(final Path channelFolder) {
-			return list(channelFolder).filter(Files::isDirectory).flatMap(child -> {
-				final String name = getFileNameLowerCase(child);
-				
-				if (name.contains(".remove-")) {
-					return Stream.empty();
-				}
-				else if (name.endsWith(".plugins")) {
-					return Stream.of(child);
-				}
-				else {
-					return Stream.of(child.resolve("lib"), child.resolve("plugins"));
-				}
-			}).filter(Files::isDirectory); // catches non-existent paths too
+		private static boolean matchesNewToolboxInstallation(final Path path) {
+			return Files.exists(path.resolve("product-info.json")) && Files.isDirectory(path.resolve("jbr"));
 		}
 		
-		private static Stream<Path> list(final Path parent) {
+		private static Stream<Path> listDirectories(final Path parent) {
 			try {
-				return Files.list(parent);
+				return Files.list(parent).filter(Files::isDirectory);
 			} catch (final IOException e) {
 				e.printStackTrace();
 				return Stream.empty();
