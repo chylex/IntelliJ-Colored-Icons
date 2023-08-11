@@ -54,7 +54,7 @@ dependencies {
 		"ides"("com.jetbrains.intellij.goland:goland:LATEST-EAP-SNAPSHOT")
 		"ides"("com.jetbrains.intellij.phpstorm:phpstorm:LATEST-EAP-SNAPSHOT")
 		"ides"("com.jetbrains.intellij.pycharm:pycharmPY:LATEST-EAP-SNAPSHOT")
-		"ides"("com.jetbrains.intellij.rider:riderRD:2022.3-SNAPSHOT")
+		"ides"("com.jetbrains.intellij.rider:riderRD:2023.3-SNAPSHOT")
 	}
 }
 
