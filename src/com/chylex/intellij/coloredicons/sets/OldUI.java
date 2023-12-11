@@ -99,7 +99,7 @@ public final class OldUI {
 		addPathWithDark("icons/toolWindowDatabase");
 		addPathWithDark("icons/toolwindowDatabaseChanges");
 		addPathWithDark("icons/toolWindowDsm");
-		addPathWithDark("icons/toolwindowEndpoints");
+		addPathWithDark("icons/toolWindowEndpoints");
 		addPathWithDark("icons/toolWindowGradle");
 		addPathWithDark("icons/toolWindowSQLGenerator");
 		addPathWithDark("icons/youTrack");
@@ -108,6 +108,7 @@ public final class OldUI {
 		addPathWithDark("icons/buildTools/npm/npm_13");
 		addPathWithDark("icons/com/jetbrains/python/DataView");
 		addPathWithDark("icons/com/jetbrains/python/pythonConsoleToolWindow");
+		addPathWithDark("icons/com/jetbrains/python/pythonPackages");
 		
 		addPathWithDark("images/toolWindowMaven");
 		addPathWithDark("images/transferToolWindow");
@@ -124,17 +125,21 @@ public final class OldUI {
 		addPathWithDark("objectBrowser/visibilitySort");
 		
 		addPathWithDark("org/jetbrains/plugins/github/pullRequestsToolWindow");
-		addPathWithDark("org/jetbrains/plugins/scala/images/sbtShellToolwin");
-		addPathWithDark("org/jetbrains/plugins/scala/images/sbtToolwin");
+		addPathWithDark("org/jetbrains/sbt/images/sbtShellToolwin");
+		addPathWithDark("org/jetbrains/sbt/images/sbtToolwin");
 		
 		addPathWithDark("resources/icons/bvToolWindow");
 		addPathWithDark("resources/icons/hibConsoleToolWindow");
 		
-		addPathWithDark("rider/toolWindows/toolWindowNuGet");
-		addPathWithDark("rider/toolWindows/toolWindowSolutionWideAnalysis");
-		addPathWithDark("rider/toolWindows/toolwindowStacktrace");
-		addPathWithDark("rider/toolWindows/toolWindowUnitTesting");
-		addPathWithDark("rider/toolWindows/toolWindowWPFPreview");
+		addPathWithDark("rider/toolwindows/DotMemoryProfilingMonoTone");
+		addPathWithDark("rider/toolwindows/toolWindowDPA");
+		addPathWithDark("rider/toolwindows/toolWindowDotTrace");
+		addPathWithDark("rider/toolwindows/toolWindowNuGet");
+		addPathWithDark("rider/toolwindows/toolWindowSolutionWideAnalysis");
+		addPathWithDark("rider/toolwindows/toolWindowUnitTesting");
+		addPathWithDark("rider/toolwindows/toolWindowWPFPreview");
+		addPathWithDark("rider/toolwindows/toolwindowStacktrace");
+		addPathWithDark("rider/toolwindows/toolwindowUnitTestCoverage");
 		
 		addPathWithDark("runConfigurations/scroll_down");
 		addPathWithDark("runConfigurations/showIgnored");
@@ -172,8 +177,10 @@ public final class OldUI {
 		addPathWithDark("toolwindows/toolWindowMessages");
 		addPathWithDark("toolwindows/toolWindowModuleDependencies");
 		addPathWithDark("toolwindows/toolWindowProfiler");
+		addPathWithDark("toolwindows/toolWindowProfilerAndroid");
 		addPathWithDark("toolwindows/toolWindowProject");
 		addPathWithDark("toolwindows/toolWindowRun");
+		addPathWithDark("toolwindows/toolWindowRunWithCoverage");
 		addPathWithDark("toolwindows/toolWindowServices");
 		addPathWithDark("toolwindows/toolWindowStructure");
 		addPathWithDark("toolwindows/toolWindowTodo");
@@ -182,10 +189,6 @@ public final class OldUI {
 		addPathWithDark("vcs/changelist");
 		addPathWithDark("vcs/history");
 		addPathWithDark("vcs/merge");
-		
-		addPathWithDark("toolWindowDotTrace");
-		addPathWithDark("toolWindowDPA");
-		addPathWithDark("toolwindowUnitTestCoverage");
 	}
 	
 	private Map<String, String> getMap() {
