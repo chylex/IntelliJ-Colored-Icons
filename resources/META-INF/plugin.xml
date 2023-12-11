@@ -9,6 +9,11 @@
   </description>
   
   <change-notes><![CDATA[
+    <b>Version 1.5</b>
+    <ul>
+      <li>Fixed tool window icons for 2023.3</li>
+      <li>Fixed exception when using the new UI</li>
+    </ul>
     <b>Version 1.4</b>
     <ul>
       <li>Added tool window icons for Bookmarks, Notifications, Dependencies, Scala, and more</li>
