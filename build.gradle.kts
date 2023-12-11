@@ -1,3 +1,5 @@
+import java.io.FileFilter
+
 plugins {
 	java
 	id("org.jetbrains.intellij") version "1.15.0"
@@ -8,17 +10,27 @@ version = "1.4"
 
 repositories {
 	mavenCentral()
+	maven("https://www.jetbrains.com/intellij-repository/releases/")
 	maven("https://www.jetbrains.com/intellij-repository/snapshots/")
 }
 
 intellij {
 	type.set("IU")
-	version.set("2023.2")
+	version.set("2023.3")
 	updateSinceUntilBuild.set(false)
+	
+	plugins.set(listOf(
+		"Pythonid:233.11799.241",                   // https://plugins.jetbrains.com/plugin/631-python/versions
+		"com.jetbrains.php:233.11799.241",          // https://plugins.jetbrains.com/plugin/6610-php/versions
+		"com.jetbrains.rust:233.20527.212",         // https://plugins.jetbrains.com/plugin/22407-rust/versions/stable/
+		"org.intellij.scala:2023.3.17",             // https://plugins.jetbrains.com/plugin/1347-scala/versions
+		"org.jetbrains.plugins.go:233.11799.196",   // https://plugins.jetbrains.com/plugin/9568-go/versions
+		"org.jetbrains.plugins.ruby:233.11799.241", // https://plugins.jetbrains.com/plugin/1293-ruby/versions
+	))
 }
 
 tasks.patchPluginXml {
-	sinceBuild.set("232")
+	sinceBuild.set("233")
 }
 
 tasks.buildSearchableOptions {
@@ -49,12 +61,9 @@ dependencies {
 	"helpersImplementation"("commons-io:commons-io:2.11.0")
 	
 	if (System.getProperty("downloadExtraIDEs", "") == "true") {
-		"ides"("com.jetbrains.intellij.idea:ideaIU:LATEST-EAP-SNAPSHOT")
-		"ides"("com.jetbrains.intellij.clion:clion:LATEST-EAP-SNAPSHOT")
-		"ides"("com.jetbrains.intellij.goland:goland:LATEST-EAP-SNAPSHOT")
-		"ides"("com.jetbrains.intellij.phpstorm:phpstorm:LATEST-EAP-SNAPSHOT")
-		"ides"("com.jetbrains.intellij.pycharm:pycharmPY:LATEST-EAP-SNAPSHOT")
-		"ides"("com.jetbrains.intellij.rider:riderRD:2023.3-SNAPSHOT")
+		"ides"("com.jetbrains.intellij.idea:ideaIU:2023.3")
+		"ides"("com.jetbrains.intellij.clion:clion:2023.3")
+		"ides"("com.jetbrains.intellij.rider:riderRD:2023.3")
 	}
 }
 
@@ -73,14 +82,14 @@ fun getClassPathFolders(configuration: Configuration): List<String> {
 
 createHelperTask("fixSVGs",                    main = "FixSVGs")
 createHelperTask("grabIconsFromInstalledIDEs", main = "GrabIcons\$FromInstalledIDEs")
-createHelperTask("grabIconsFromGradle",        main = "GrabIcons\$FromArgumentPaths") {
+createHelperTask("grabIconsFromGradle",        main = "GrabIcons\$FromArgumentPaths") { task ->
 	val ideLibraries = getClassPathFolders(project.configurations.getByName("ides"))
-	val downloadedPlugins = File(buildDir, "idea-sandbox/system/plugins").absolutePath
+	val downloadedPlugins = File(buildDir, "idea-sandbox/plugins").listFiles(FileFilter { it.isDirectory && it.name != rootProject.name })
 	
-	if (File(downloadedPlugins).exists()) {
-		it.args = ideLibraries + downloadedPlugins
+	if (downloadedPlugins != null) {
+		task.args = ideLibraries + downloadedPlugins.map(File::getAbsolutePath)
 	}
 	else {
-		it.args = ideLibraries
+		task.args = ideLibraries
 	}
 }
