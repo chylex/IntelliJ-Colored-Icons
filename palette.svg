@@ -1,22 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 32 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g id="Light">
-        <rect x="2" y="18" width="5.5" height="5.5" style="fill:#b76db7;"/>
-        <rect x="8.5" y="18" width="5.5" height="5.5" style="fill:#6e6e6e;"/>
-        <rect x="2" y="5" width="5.5" height="5.5" style="fill:#59a869;"/>
-        <rect x="8.5" y="5" width="5.5" height="5.5" style="fill:#eda200;"/>
-        <rect x="2" y="11.5" width="5.5" height="5.5" style="fill:#389fd6;"/>
-        <rect x="8.5" y="11.5" width="5.5" height="5.5" style="fill:#db5860;"/>
-        <text x="5.832px" y="3.216px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:2px;">Light</text>
+<svg width="100%" height="100%" viewBox="0 0 33 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Dark---New" serif:id="Dark / New">
+        <rect x="28" y="24" width="4" height="4" style="fill:#ced0d6;"/>
+        <rect x="23" y="24" width="4" height="4" style="fill:#b466b4;"/>
+        <rect x="18" y="19" width="4" height="4" style="fill:#57965c;"/>
+        <rect x="23" y="19" width="4" height="4" style="fill:#f2c55c;"/>
+        <rect x="28" y="19" width="4" height="4" style="fill:#548af7;"/>
+        <rect x="18" y="24" width="4" height="4" style="fill:#db5c5c;"/>
+        <g transform="matrix(2,0,0,2,29.8363,17.216)">
+        </g>
+        <text x="19.946px" y="17.216px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:2px;">Dark / New</text>
     </g>
-    <g id="Dark">
-        <rect x="24.5" y="18" width="5.5" height="5.5" style="fill:#afb1b3;"/>
-        <rect x="18" y="18" width="5.5" height="5.5" style="fill:#b066b0;"/>
-        <rect x="18" y="5" width="5.5" height="5.5" style="fill:#499c54;"/>
-        <rect x="24.5" y="5" width="5.5" height="5.5" style="fill:#f0a732;"/>
-        <rect x="18" y="11.5" width="5.5" height="5.5" style="fill:#3592c4;"/>
-        <rect x="24.5" y="11.5" width="5.5" height="5.5" style="fill:#c75450;"/>
-        <text x="21.889px" y="3.216px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:2px;">Dark</text>
+    <g id="Dark---Old" serif:id="Dark / Old">
+        <rect x="28" y="10" width="4" height="4" style="fill:#afb1b3;"/>
+        <rect x="23" y="10" width="4" height="4" style="fill:#b066b0;"/>
+        <rect x="18" y="5" width="4" height="4" style="fill:#499c54;"/>
+        <rect x="23" y="5" width="4" height="4" style="fill:#f0a732;"/>
+        <rect x="28" y="5" width="4" height="4" style="fill:#3592c4;"/>
+        <rect x="18" y="10" width="4" height="4" style="fill:#c75450;"/>
+        <g transform="matrix(2,0,0,2,29.4477,3.216)">
+        </g>
+        <text x="20.446px" y="3.216px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:2px;">Dark / Old</text>
+    </g>
+    <g id="Light---New" serif:id="Light / New">
+        <rect x="6" y="24" width="4" height="4" style="fill:#b857b8;"/>
+        <rect x="11" y="24" width="4" height="4" style="fill:#6c707e;"/>
+        <rect x="1" y="19" width="4" height="4" style="fill:#369650;"/>
+        <rect x="6" y="19" width="4" height="4" style="fill:#ffaf0f;"/>
+        <rect x="11" y="19" width="4" height="4" style="fill:#3574f0;"/>
+        <rect x="1.156" y="24" width="4" height="4" style="fill:#db3b4b;"/>
+        <g transform="matrix(2,0,0,2,12.9584,17.216)">
+        </g>
+        <text x="2.954px" y="17.216px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:2px;">Light / New</text>
+    </g>
+    <g id="Light---Old" serif:id="Light / Old">
+        <rect x="6" y="10" width="4" height="4" style="fill:#b76db7;"/>
+        <rect x="10.943" y="10" width="4" height="4" style="fill:#6e6e6e;"/>
+        <rect x="1" y="5" width="4" height="4" style="fill:#59a869;"/>
+        <rect x="6" y="5" width="4" height="4" style="fill:#eda200;"/>
+        <rect x="10.943" y="5" width="4" height="4" style="fill:#389fd6;"/>
+        <rect x="1" y="10" width="4" height="4" style="fill:#db5860;"/>
+        <g transform="matrix(2,0,0,2,12.5697,3.216)">
+        </g>
+        <text x="3.454px" y="3.216px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:2px;">Light / Old</text>
     </g>
 </svg>

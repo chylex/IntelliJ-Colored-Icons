@@ -1,11 +1,11 @@
 package com.chylex.intellij.coloredicons;
+import com.chylex.intellij.coloredicons.sets.NewUI;
 import com.chylex.intellij.coloredicons.sets.OldUI;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.util.IconPathPatcher;
 import com.intellij.ui.NewUiValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import java.util.Collections;
 import java.util.Map;
 
 public class IconPatcher extends IconPathPatcher {
@@ -13,7 +13,7 @@ public class IconPatcher extends IconPathPatcher {
 	private final Map<String, String> iconPaths;
 	
 	public IconPatcher() {
-		iconPaths = NewUiValue.isEnabled() ? Collections.emptyMap() : OldUI.getIconPaths();
+		iconPaths = NewUiValue.isEnabled() ? NewUI.getIconPaths() : OldUI.getIconPaths();
 		IconLoader.installPathPatcher(this);
 	}
 	
