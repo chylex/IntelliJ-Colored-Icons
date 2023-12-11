@@ -26,7 +26,10 @@ abstract class GrabIcons {
 	private static final List<String> EXPECTED_OLD_UI_VIEW_BOXES_LOWERCASE = List.of(
 		"viewbox=\"0 0 12 12\"",
 		"viewbox=\"0 0 13 13\"",
-		"viewbox=\"0 0 16 16\""
+		"viewbox=\"0 0 16 16\"",
+		"width=\"12\" height=\"12\"",
+		"width=\"13\" height=\"13\"",
+		"width=\"16\" height=\"16\""
 	);
 	
 	private static final List<String> EXPECTED_OLD_UI_COLORS_LOWERCASE = List.of(
@@ -37,7 +40,10 @@ abstract class GrabIcons {
 	private static final List<String> EXPECTED_NEW_UI_VIEW_BOXES_LOWERCASE = List.of(
 		"viewbox=\"0 0 14 14\"",
 		"viewbox=\"0 0 16 16\"",
-		"viewbox=\"0 0 20 20\""
+		"viewbox=\"0 0 20 20\"",
+		"width=\"14\" height=\"14\"",
+		"width=\"16\" height=\"16\"",
+		"width=\"20\" height=\"20\""
 	);
 	
 	private static final List<String> EXPECTED_NEW_UI_COLORS_LOWERCASE = List.of(
