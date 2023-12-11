@@ -81,6 +81,7 @@ fun getClassPathFolders(configuration: Configuration): List<String> {
 }
 
 createHelperTask("fixSVGs",                    main = "FixSVGs")
+createHelperTask("deleteFinishedIcons",        main = "DeleteFinishedIcons")
 createHelperTask("grabIconsFromInstalledIDEs", main = "GrabIcons\$FromInstalledIDEs")
 createHelperTask("grabIconsFromGradle",        main = "GrabIcons\$FromArgumentPaths") { task ->
 	val ideLibraries = getClassPathFolders(project.configurations.getByName("ides"))
