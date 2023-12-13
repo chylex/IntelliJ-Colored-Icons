@@ -9,6 +9,10 @@
   </description>
   
   <change-notes><![CDATA[
+    <b>Version 1.5.1</b>
+    <ul>
+      <li>Fixed a random exception while loading the plugin</li>
+    </ul>
     <b>Version 1.5</b>
     <ul>
       <li>Fixed tool window icons for 2023.3</li>

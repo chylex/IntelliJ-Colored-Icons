@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.chylex.intellij.coloredicons"
-version = "1.5"
+version = "1.5.1"
 
 repositories {
 	mavenCentral()
