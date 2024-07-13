@@ -16,21 +16,23 @@ repositories {
 
 intellij {
 	type.set("IU")
-	version.set("2023.3")
+	version.set("242.20224-EAP-CANDIDATE-SNAPSHOT")
 	updateSinceUntilBuild.set(false)
 	
 	plugins.set(listOf(
-		"Pythonid:233.11799.241",                   // https://plugins.jetbrains.com/plugin/631-python/versions
-		"com.jetbrains.php:233.11799.241",          // https://plugins.jetbrains.com/plugin/6610-php/versions
-		"com.jetbrains.rust:233.20527.212",         // https://plugins.jetbrains.com/plugin/22407-rust/versions/stable/
-		"org.intellij.scala:2023.3.17",             // https://plugins.jetbrains.com/plugin/1347-scala/versions
-		"org.jetbrains.plugins.go:233.11799.196",   // https://plugins.jetbrains.com/plugin/9568-go/versions
-		"org.jetbrains.plugins.ruby:233.11799.241", // https://plugins.jetbrains.com/plugin/1293-ruby/versions
+		"com.intellij.classic.ui:242.20224.22",    // https://plugins.jetbrains.com/plugin/24468-classic-ui/versions
+		"com.jetbrains.php:242.20224.44",          // https://plugins.jetbrains.com/plugin/6610-php/versions
+		"com.jetbrains.rust:242.1",                // https://plugins.jetbrains.com/plugin/22407-rust/versions
+		"org.intellij.scala:2024.2.11",            // https://plugins.jetbrains.com/plugin/1347-scala/versions
+		"org.jetbrains.plugins.go:242.20224.38",   // https://plugins.jetbrains.com/plugin/9568-go/versions
+		"org.jetbrains.plugins.ruby:242.20224.38", // https://plugins.jetbrains.com/plugin/1293-ruby/versions
+		"PythonCore:242.20224.38",                 // https://plugins.jetbrains.com/plugin/7322-python-community-edition/versions
+		"Pythonid:242.20224.38",                   // https://plugins.jetbrains.com/plugin/631-python/versions
 	))
 }
 
 tasks.patchPluginXml {
-	sinceBuild.set("233")
+	sinceBuild.set("242")
 }
 
 tasks.buildSearchableOptions {
