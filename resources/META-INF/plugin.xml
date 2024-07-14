@@ -9,6 +9,10 @@
   </description>
   
   <change-notes><![CDATA[
+    <b>Version 1.6.0</b>
+    <ul>
+      <li>Added dependency on the Classic UI plugin for 2024.2</li>
+    </ul>
     <b>Version 1.5.1</b>
     <ul>
       <li>Fixed a random exception while loading the plugin</li>
